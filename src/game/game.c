@@ -67,6 +67,11 @@ int oshu_game_create(const char *beatmap_path, struct oshu_game **game)
 			SDL_SetTextureColorMod((*game)->background, 64, 64, 64);
 	}
 
+	if ((*game)->mode->init(*game) < 0) {
+		oshu_log_error("unable to initialize this game mode");
+		goto fail;
+	}
+
 	return 0;
 fail:
 	oshu_game_destroy(game);

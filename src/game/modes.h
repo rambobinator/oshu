@@ -34,6 +34,10 @@ struct oshu_game;
  */
 struct oshu_game_mode {
 	/**
+	 * Called one time during game initialization.
+	 */
+	int (*init)(struct oshu_game *game);
+	/**
 	 * Called at every game iteration, unless the game is paused.
 	 *
 	 * The job of this function is to check the game clock and see if notes

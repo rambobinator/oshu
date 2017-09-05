@@ -5,6 +5,7 @@
  * Implement the osu! standard mode.
  */
 
+#include "log.h"
 #include "game/game.h"
 #include "game/modes.h"
 #include "graphics/draw.h"
@@ -155,6 +156,13 @@ static void check_audio(struct oshu_game *game)
 	);
 }
 
+static int init(struct oshu_game *game)
+{
+	(void)game;
+	oshu_log_info("osu mode");
+	return 0;
+}
+
 static int check(struct oshu_game *game)
 {
 	check_slider(game);
@@ -206,6 +214,7 @@ static int mouse_released(struct oshu_game *game, Uint8 button)
 }
 
 struct oshu_game_mode oshu_osu_mode = {
+	.init = init,
 	.check = check,
 	.draw = draw,
 	.key_pressed = key_pressed,
