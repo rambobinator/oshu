@@ -44,6 +44,7 @@ struct oshu_game {
 	/** Mode-specific data, defined in the \ref game-modes module. */
 	union {
 		struct oshu_osu_state osu;
+		struct oshu_catch_the_beat_state ctb;
 	};
 };
 

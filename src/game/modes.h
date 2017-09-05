@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include <stdbool.h>
 #include <SDL2/SDL.h>
 
 /**
@@ -100,8 +101,23 @@ struct oshu_osu_state {
 };
 
 /**
+ * Parts of the game state specific to the Osu! catch the beat mode.
+ */
+struct oshu_catch_the_beat_state {
+	/**
+	 * Dash state.
+	 */
+	bool *is_dash;
+};
+
+/**
  * Implementation of the standard osu! game mode.
  */
 extern struct oshu_game_mode oshu_osu_mode;
+
+/**
+ * Implementation of the catch the beat osu! game mode.
+ */
+extern struct oshu_game_mode oshu_catch_the_beat_mode;
 
 /** \} */

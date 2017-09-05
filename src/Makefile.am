@@ -13,6 +13,7 @@ oshu_SOURCES = \
 	game/game.h \
 	game/modes.h \
 	game/osu.c \
+	game/catch_the_beat.c \
 	graphics/display.c \
 	graphics/display.h \
 	graphics/draw.c \
